@@ -1,0 +1,36 @@
+h3,h4 {
+    color: orange;
+}
+.desno_poravnanje {
+    text-align: right;
+}
+.crveni_tekst {
+    color: red;
+}
+.drugi {
+    background-color: yellow;
+}
+#treci {
+    background-color: bisque;
+    font-style: italic;
+    border: solid 3px red;
+}
+li {
+    color: limegreen;
+}
+.stavka {
+    color: blue;
+}
+#prva_stavka {
+    color: orange;
+}
+div p {
+    color: aquamarine;
+}
+
+div > p {
+    border: 1px solid green;
+}
+p:first-child {
+    font-weight: bold;
+}
