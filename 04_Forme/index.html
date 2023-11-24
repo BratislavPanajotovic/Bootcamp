@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>
+                Osnovne informacije
+            </legend>
+            <p>
+                <label for="ime">Ime i prezime</label>
+                <input type="text">
+            </p>
+            <p>
+                <input type="text" placeholder="Prezime" maxlength="15">
+            </p>
+            <!-- <p> -->
+                <!-- <input type="text" value=""kurs"> -->
+            <!-- </p> -->
+                <p>
+                    <label for="godine">Godine:</label>
+                    <input type="number"min="18" max="60" step="0.5">
+                </p>
+                <p>
+                    <label for="">
+                        Lozinka
+                    </label>
+                    <input type="password" placeholder="">
+                </p>
+               
+        </fieldset>
+        <fieldset>
+            <legend>Dodatne informacije</legend>
+            <p>
+                <label for="">
+                    Odaberite kurs:
+                </label>
+                <input type="radio" name="kurs" value="JS">JavaScript
+                <input type="radio" name="kurs" value="PHP">PHP
+                <input type="radio" name="kurs" value="QualityAssurance">QA
+            </p>
+            <p>
+                <label for="">
+                </label>
+                    <input type="checkbox" name="znanje" value="html" id="html" checked> 
+                        <label for="html" id="html">
+                        HTML
+                     </label>
+                <input type="checkbox" name="znanje" value="css" id="css">CSS
+                <input type="checkbox" name="znanje" value="js">JS
+            </p>
+            <p>
+                <!-- <label for="">Odaberite fajl:</label> -->
+                <input type="file" name="fajl" id="">
+            </p>
+
+            <p>
+                <select name="" id="">
+                    <optgroup label="Nis">
+                        <option value="JS">JavaScript</option>
+                        <option value="QA-ni">QA</option>
+                    </optgroup>
+                    <optgroup label="Beograd">
+                        <option value="Python">Python</option>
+                        <option value="PHP">PHP</option>
+                        <option value="QA-bg">QA</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+        <input type="button" value="Klikni">
+        <input type="submit" value="Posalji">
+        <input type="reset" value="Resetuj">
+
+    </form>
+</body>
+</html>
