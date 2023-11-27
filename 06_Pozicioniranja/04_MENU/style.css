@@ -1,0 +1,71 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:1;
+
+}
+ 
+ .topbar ul{
+    background-color: black;
+    overflow: hidden;
+}
+
+.topbar ul li {
+    float: left ;
+    list-style: none;
+    color: white;
+    width: 25%;
+    padding: 10px 25px;
+    border:1px solid red;
+    text-align: center;
+    background-color: brown;
+} 
+.topbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.topbar ul li:hover {
+background-color: chocolate;
+}
+/* Ostatak */
+
+.ostatak {
+position: relative;
+top:45px;
+overflow: hidden;
+}
+.ostatak aside {
+    float: left;
+    width: 30%;
+}
+.ostatak section {
+    float:left;
+    width: 70%;
+}
+.ostatak aside ul {
+list-style: none;
+}
+.ostatak aside ul li {
+
+border: 1px solid green;
+text-align: center;
+background-color: darkgreen;
+}
+.ostatak aside ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.ostatak aside ul li:hover {
+background-color: greenyellow;
+}
