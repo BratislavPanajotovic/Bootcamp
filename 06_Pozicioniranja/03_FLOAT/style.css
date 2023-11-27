@@ -1,0 +1,20 @@
+/*HTML: parent-child struktura
+  children:float 
+  parent: overflow
+*/
+
+
+div {
+    background-color: brown;
+    overflow: hidden;
+}
+p {
+    float: right;
+    background-color: aquamarine;
+    border: 2px solid blue;
+    width: 250px;
+    height: 50px;
+}
+p:nth-child(2n){
+float: left;
+}
