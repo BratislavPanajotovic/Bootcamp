@@ -13,16 +13,14 @@
 }
  
  .topbar ul{
-    background-color: black;
     overflow: hidden;
+    list-style: none;
 }
 
 .topbar ul li {
     float: left ;
-    list-style: none;
-    color: white;
+   
     width: 25%;
-    padding: 10px 25px;
     border:1px solid red;
     text-align: center;
     background-color: brown;
@@ -31,10 +29,18 @@
     color: white;
     text-decoration: none;
     padding: 10px 0;
+    display: block;
     font-size: 18px;
 }
 .topbar ul li:hover {
 background-color: chocolate;
+}
+.dropdown {
+    display: none;
+}
+.topbar li:nth-child(4):hover .dropdown {
+    display: block;
+    
 }
 /* Ostatak */
 

@@ -1,0 +1,35 @@
+body {
+    background-color: antiquewhite;
+}
+img {
+    width: 50%;
+}
+/*Za sirinu ekrana ispod 700 px*/
+@media only screen and (max-width: 700px) {
+
+    img {
+        width: 100%;
+    }
+
+}
+@media only screen and (min-width: 800px) {
+    img{
+        width: 100%;
+        border:green 5px solid;
+    }
+
+}
+@media only screen and (min-width: 900px) {
+    img{
+        width: 100%;
+        border:blue 5px solid;
+    }
+
+}
+
+/*Za sirinu ekrana izmedju 500px i 700px */
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+    p{
+        color: purple;
+    }
+}
