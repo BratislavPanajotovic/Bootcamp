@@ -22,24 +22,19 @@
 //     paragraf.style.color = `blue`;
 // }
 //9. zadatak
-let satPocetka1 = 8;
-let satKraja1 = 16;
+let satPocetka1 = 6;
+let satKraja1 = 13;
 
-let satPocetka2 = 7;
-let satKraja2 = 15;
+let satPocetka2 = 14;
+let satKraja2 = 22;
 
-if (satPocetka2 > satPocetka1 & satKraja1<satKraja2){
-console.log(`Smene se preklapaju`);
-}else if (satPocetka2<satPocetka1 & satKraja2<satKraja1) {
-console.log(`Smene se preklapaju`);
-}else if (satPocetka1 == satPocetka2 & satKraja1 == satKraja2 ) {
-console.log(`Smene se preklapaju`)
-}else if (satKraja1==satPocetka2){
-console.log(`Smene se preklapaju`)}
-else if (satKraja2 == satPocetka1) {
-console.log(`Smene se preklapaju`)
+if(satPocetka2 > satKraja1) {
+    console.log(`Smene se ne preklapaju!`);
+} else if (satPocetka1 > satKraja2) {
+    console.log(`Smene se ne preklapaju!`);
 } else {
-console.log(`Smene se ne preklapaju`);
+    console.log(`Smene se preklapaju!`);
+
 }
 
 
