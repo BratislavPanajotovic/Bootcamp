@@ -79,4 +79,5 @@ if(manji % 3 == 0) {
 } else { 
     console.log(`Manji broj nije deljiv sa 3`);
  }
+ 
 
