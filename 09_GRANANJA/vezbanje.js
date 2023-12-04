@@ -39,13 +39,44 @@ if(satPocetka2 > satKraja1) {
 
 
 
+//13. zadatak
+let d1 = 30;
+let m1 = 5;
+let g1 = 2008;
+let d2 = 1;
+let m2 = 6;
+let g2 = 2005;
 
-//10. zadatak
-let prviBroj = 25;
-let drugiBroj = 23;
-if (prviBroj < drugiBroj) {
-    console.log(prviBroj-1);
-} else if (prviBroj > drugiBroj) {
-    console.log(prviBroj+1);
-} 
+if (g1==g2) {
+    if (m1>m2){
+    console.log(`Raniji datum je ${d1}.${m1}.${g1}`);
+    } else if (m1<m2){
+    console.log(`Raniji datum je ${d1}.${m1}.${g1}`);
+    }
+    else if (d1>d2) {
+    console.log(`Raniji datum je ${d1}.${m1}.${g1}`);
+    } 
+    else console.log(`Manji datum je ${d2}.${m2}.${g2}`);
+} else if (g1>g2){
+    console.log(`Raniji datum je ${d1}.${m1}.${g1}`);
+} else {
+    console.log(`Raniji datum je ${d2}.${m2}.${g2}`);
+}
+//12. zadatak
+let br1 = 12;
+let br2 = 4;
+
+let veci = Math.max(br1,br2)
+let manji = Math.min(br1,br2);
+
+if (veci % 2 === 0 ) {
+    console.log(`Veci broj je deljiv sa 2`);
+} else console.log(`Veci broj nije deljiv sa 2`);
+
+if(manji % 3 == 0) {
+    console.log(`Manji broj je deljiv sa 3`);
+    
+} else { 
+    console.log(`Manji broj nije deljiv sa 3`);
+ }
 
