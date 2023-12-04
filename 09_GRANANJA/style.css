@@ -21,3 +21,12 @@ header {
 li{
    flex: 1; 
 }
+p {
+    width: 100%;
+    display: flex;
+}
+p label {
+
+}
+input {
+}
