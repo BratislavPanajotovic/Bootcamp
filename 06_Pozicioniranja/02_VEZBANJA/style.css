@@ -1,13 +1,13 @@
 
 
 /* PRVO VEZBANJE*/
-/*
- 
+
+ body{
     margin: 0; 
 }
 
-/*Centar */
-/*
+Centar 
+
 header {
     position: relative;
 }
@@ -22,12 +22,12 @@ header div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-} */
+} 
 
 
 /*Gornji levi ugao */
 
-/*
+
 img {
     height: 100px;
     width: 100%;
@@ -41,7 +41,7 @@ header div {
 } 
 
 /* GOrnji desni ugao */
-/*
+
 
 
 img {
@@ -57,7 +57,7 @@ header div {
 }
 */
 /* Donji levi ugao */
-/*
+
 header {
     position: relative;
 }
@@ -73,7 +73,7 @@ header div {
     left: 0;
 } */
 /*Donji desni ugao */
-/* 
+
 
 header {
     position: relative;
@@ -88,7 +88,7 @@ header div {
     position: absolute;
     bottom: 0;
     right: 0;
-} */
+} 
 
 
 
