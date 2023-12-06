@@ -8,6 +8,7 @@ nav  {
 }
 ul {
     width: 100%;
+    margin:0;
     padding: 0;
     height: 100%;
     list-style-type: none;
@@ -15,6 +16,8 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+
+
 }
 header {
     width: 100%;
@@ -25,12 +28,27 @@ header {
 }
 li{
    flex: 1; 
-   border-left: 2px solid white;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    
 }
+a .li1 {
+   /* border-right: 5px solid white; */
+   /* border-left: 5px solid white; */
+}
+a .li2 {
+    /* border-right: 5px solid white; */
+ }
 a {
     color: white;
     text-decoration: none;
+    flex: 1; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 li:hover {
 background-color: orangered;
@@ -89,14 +107,23 @@ background-color: bisque;
 .p1 {
 width: 50%;
 }
-@media only screen and (max-width:700px) {
-    
-    
-    .pimg {
-        width: 40px;
+@media (max-width: 700px) {
+    ul {
+        flex-direction: column; /* Vertical layout */
     }
-    body {
-    width: 100%;
+
+    li {
+        border-left: none; /* Remove border for vertical layout */
+        border-bottom: 2px solid white; 
     }
+}
+@media (min-width: 700px) {
+    a .li1 {
+        border-right: 2px solid white;
+        border-left: 2px solid white;
+     }
+     a .li2 {
+         border-right: 2px solid white;
+      }
 }
     
