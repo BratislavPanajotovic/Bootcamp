@@ -52,3 +52,34 @@ while (i <= n) {
     i++;
 
 }
+//Zadatak 6
+i=1;
+let suma=0;
+while (i<=100) 
+{
+    suma+=i;
+    i++;
+}
+console.log(suma);
+//Zadatak 7
+i=1;
+let n2 = 135;
+let suma2 =0;
+while (i<=n2)
+{
+    suma2+=i;
+    i++;
+}
+console.log(suma2);
+//Zadatak 8
+let n3 = 150;
+let m = 300;
+let suma3 = 0;
+i=n3;
+while (i <=m) {
+    suma3 += i;
+    i++;
+}
+console.log(suma3);
+//Zadatak9
+
