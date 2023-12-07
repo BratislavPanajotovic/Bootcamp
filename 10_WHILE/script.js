@@ -33,9 +33,22 @@
 // }
 // console.log("kraj");
 //4.Zadatak
-let i=1
-while (i >= 6){
-if (i%2 ==0){
-    document.write(<p style="color:red"> lorem ipsum dolores </p>)
-}
+// let i=1
+// while (i >= 6){
+// if (i%2 ==0){
+//     document.write(<p style="color:red"> lorem ipsum dolores </p>)
+// }
+// }
+let n=7;
+i = 1;
+while (i <= n) {
+    if (i % 3 == 1) {
+    document.body.innerHTML += ` <p class="plava">Paragraf broj ${i}</p>`
+    }
+    else if (i%3 == 2) {
+        document.body.innerHTML += ` <p class="crvena">Paragraf broj ${i}</p>`
+    
+} else {document.body.innerHTML += ` <p class="zelena">Paragraf broj ${i}</p>` }
+    i++;
+
 }
