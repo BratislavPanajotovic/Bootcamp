@@ -82,4 +82,55 @@ while (i <=m) {
 }
 console.log(suma3);
 //Zadatak9
+n=3;
+m=6;
+let proizvod = 1;
+i=n;
+while (i<=m){
+proizvod*=i;
+i++;
+}
+console.log(proizvod);
+//Zadatak 10
+n=5;
+m=10;
+i=n;
 
+let sumaKvad=0;
+let sumaKub=0;
+while (i<=m) {
+if (i%2==0){
+    sumaKvad += i**2 ;
+} else {
+    sumaKub += i**3 ;
+}
+i++
+}
+console.log(sumaKvad,sumaKub);
+//Zadatak 11
+let k = 113;
+i=1;
+let brojac = 0;
+
+while (i<=k) {
+    if (k%i == 0) {
+        brojac++
+    } 
+i++
+}
+console.log(brojac);
+//Zadatak 12 
+let g = 113;
+i=1;
+let brojacc = 0;
+
+while (i<=k) {
+    if (k%i == 0) {
+        brojacc++
+    }  
+i++
+}
+if (brojac == 2 ) {
+    console.log(`Broj ${g} je prost`);
+    console.log(`Broj ${g} je slozen`);
+} 
