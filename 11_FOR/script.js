@@ -148,3 +148,5 @@ for (i;i<=100;i++) {
         
     }
 }
+//* 20. Zadatak
+let divTabela = document.getElementById('tabela');
