@@ -252,6 +252,13 @@ console.log(ukupnaPlata(5,15000,500));
 
 // * Zadatak 16 
 
-let doMosta = 15;
-let =20;
-
+function igreBezGranica (t,p,n) {
+    if (t< p || t>p+n) {
+        console.log(`Cekanje je 0s`);
+    } else {
+        let cekanje = p+n-t;
+        console.log(`Takmicaru je potrebno da saceka ${cekanje} sekundi.`);
+    } 
+}
+igreBezGranica(15,20,25);
+igreBezGranica(15,10,12);
