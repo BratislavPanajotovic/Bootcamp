@@ -90,7 +90,7 @@ let najduzi = (niz) => {
     } return maxDuzina;
 }
 }
-let test = ['Ena','Ema','Baki','NaN',"Ana","Null"]
+let test = ['aena','Ema','Baki','NuN',"Ana","Null"]
 console.log(najduzi(test));
 //* Zadatak 21
 let avgLength = niz => {
@@ -111,3 +111,44 @@ let aboveAvgLength = niz => {
     } return broj;
 }
 console.log(aboveAvgLength(test));
+//* Zadatak 22
+
+let elNumber= niz => {
+    let number = 0;
+    for (let i=0;i<niz.length;i++){
+        if (niz[i].includes('a')) {
+            number++;
+        } 
+    } return number;
+} 
+let elNumber2 = niz => {
+    let number = 0;
+    for (let i=0;i<niz.length;i++){
+        if (niz[i].includes('a') || (niz[i].includes('A'))) {
+            number++;
+        } 
+    } return number;
+} 
+
+console.log(elNumber(test));
+//* Zadatak 23 
+
+let firstLetter= niz => {
+    let number = 0;
+    for (let i=0;i<niz.length;i++){
+        if (niz[i].startsWith('a') || (niz[i].startsWith('A'))) {
+            number++;
+        } 
+    } return number;
+} 
+console.log(firstLetter(test));
+
+//* Zadatak 24
+let zad24a=(a,b)=> {
+    let n = a.length;
+    let c=[];
+    for (let i=0;i<n;i++) {
+        c.push(a[i], b[i]);
+    }
+}
+return c;
