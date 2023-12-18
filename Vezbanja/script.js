@@ -16,3 +16,12 @@ function zbirCifara(broj){
     }
   console.log(zbirCifara(367));
   ///////////////////////////////////////
+  let n=10;
+  let m=22;
+  let i=n;
+  let multiply=1;
+  while (i<m) {
+    multiply *= n;
+    i++
+}
+console.log(multiply);
