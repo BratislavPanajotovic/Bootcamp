@@ -99,7 +99,19 @@ let prosek = avgWeight(tezine);
 let brojOsoba = 0;
 
 for (let i=0;i<tezine.length;i++) {
-
+    if (estimacija(tezine[i],prosek) == 0){
+        brojOsoba++
+    
+    }
 }
-
+return brojOsoba;
 } 
+let p = document.createElement("p");
+ if (calcClients > tezine.length / 3) {
+    p.textContent = "Svi klijenti su priblizno iste tezine";
+    p.style.color = "green";
+} else {
+    p.textContent = "Nisu svi klijenti iste tezine"
+    p.style.color = "red"
+}
+document.body.appendChild(p);
