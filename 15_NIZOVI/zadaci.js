@@ -70,3 +70,44 @@ let minValue= niz => {
 
 }
 console.log(minValue(niz));
+
+let duzinaSvakogElementa = (niz) => {
+
+for (let i=0;i<niz.length;i++) {
+    let s=niz[i];
+    console.log(s.length);
+}
+
+}
+let najduzi = (niz) => {
+    let max = niz[0];
+    let maxDuzina = max.length;
+    for (let i=1;i<niz.length;i++ ) {
+        let vrednost =niz[i];
+        if (duzinaSvakogElementa(niz[i])>duzinaSvakogElementa(max)){
+        max = vrednost;
+        maxDuzina += vrednost.length;
+    } return maxDuzina;
+}
+}
+let test = ['Ena','Ema','Baki','NaN',"Ana","Null"]
+console.log(najduzi(test));
+//* Zadatak 21
+let avgLength = niz => {
+    let zbirDuzina =0;
+    for(let i=1;i<niz.length;i++) {
+        let s = niz[i];
+        zbirDuzina += s.length;
+    } return zbirDuzina / niz.length;
+}
+let aboveAvgLength = niz => {
+    let avg = avgLength(niz);
+    let broj=0;
+    for(let i = 0; i < niz.length; i++) {
+        let s = niz[i];
+        if (s.length > avg) {
+            broj++;
+        }
+    } return broj;
+}
+console.log(aboveAvgLength(test));
