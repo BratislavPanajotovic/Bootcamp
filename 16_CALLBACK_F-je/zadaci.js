@@ -90,7 +90,7 @@ let brElSrVr= niz => {
 //* Zadatak 19
 
 let duzinaSvihStringova = niz => {
-    niz.forEach(el => {
+    niz.forEac (el => {
         console.log(el.length);
     })
 }
@@ -98,3 +98,43 @@ let duzinaSvihStringova = niz => {
 let imena = ["Stefan","Vladislav","Nikola","Nevena","Maja"];
 duzinaSvihStringova(imena);
 
+//* Zadatak 20
+
+let stringMaxDuzina = niz => {
+    let maxVr = niz[0];
+    let duzina = niz[0].length;
+    niz.forEach(el => { 
+        if (el.length>duzina){
+            maxVr = el;
+            return maxVr;
+        }
+    })
+}
+//* Zadatak 24
+let zad24 = (a,b) => {
+    let c = [];
+    a.forEach((el,i) => {
+        c.push(el,b[i]);
+    }); return c;
+}
+
+//* Zadatak 25
+let zad25for =(a,b) => {
+    let n = a.length;
+    let c=[];
+    for (let i=0;i<n;i++) {
+        c[i] = a[i] * b[i];
+    } return c;
+}
+let n1 = [1,2,3,4];
+let n2 = [5,6,7,8,9];
+console.log(zad24(n1,n2));
+console.log(zad25for(n1,n2));
+
+let zad24forEach = (a,b) => {
+    let c=[];
+    a.forEach((el,i) => {
+        c.push(el*b[i]);
+    })
+}
+//* Zadatak 26
