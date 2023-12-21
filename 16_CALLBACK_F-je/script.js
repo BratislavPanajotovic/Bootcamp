@@ -36,3 +36,5 @@ let ispisNiza = (niz,cb)=> {
     cb(s);
 }
 ispisNiza(a,ispisKonzola);
+
+a.forEach(ispisKonzola);
