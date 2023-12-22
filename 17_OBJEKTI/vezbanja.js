@@ -45,10 +45,41 @@ let dan1 = {
             manjaTemp=t1
         }
         this.temperature.forEach( el=>{
-            if (t1<el && el<t2){
+            if (t1<el && t2>el){
                 brMerenja++;
             }
         }); return brMerenja;
+    },
+    iznadProseka: () => {
+        let brojac1=0;
+        let brojac2=0;
+
+        let srednjaVrednost= this.prosecnaTemp();
+
+        this.temperature.forEach(el => {
+            if (el>srednjaVrednost) {
+                brojac1++;
+        } else {
+                brojac2++;
+        }
+
+    });
+        if (brojac1 > srednjaVrednost) {
+            return true;
+        } return false;
+},
+    tipDana: () => {
+        let leden;
+        this.temperature.forEach(el => {
+         (el < 0) ? leden=true : leden=false; 
+        });
+    },
+    nepovoljan: function() {
+        for (let i=0;i<this.temperature.length;i++) {
+            if(Math.abs(this.temperature[i] - this.temperature[i+1]) > 8){
+                return true;
+            }
+        } return false;
     }
 
-};
+}
