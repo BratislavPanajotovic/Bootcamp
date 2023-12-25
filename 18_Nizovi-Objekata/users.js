@@ -63,3 +63,82 @@ users.forEach((u) => {
     console.log(u.blogs);
   }
 });
+users.forEach((u) => {
+  let sumLikes = 0;
+  u.blogs.forEach((b) => {
+    sumLikes += b.likes;
+  });
+  if (sumLikes > 100) {
+    console.log(u.username);
+  }
+});
+let sumLikes = 0;
+let br = 0;
+users.forEach((u) => {
+  u.blogs.forEach((b) => {
+    sumLikes += b.likes;
+    br++;
+  });
+});
+//* Zadaci 6. i 7.
+let prosek = sumLikes / br;
+users.forEach((u) => {
+  u.blogs.forEach((b) => {
+    if (b.likes > prosek) {
+      console.log(b.title);
+    }
+  });
+});
+
+let sumDis = 0;
+let brN = 0;
+users.forEach((u) => {
+  u.blogs.forEach((b) => {
+    sumDis += b.dislikes;
+    brN++;
+  });
+});
+let prosekN = sumDis / brN;
+
+let naslovi = [];
+users.forEach((u) => {
+  u.blogs.forEach((b) => {
+    if (b.likes > prosek && b.likes < prosekN) {
+      naslovi.push(b.title);
+    }
+  });
+});
+console.log(naslovi);
+///////////////////////////////////////
+let dan1 = {
+  datum: "2023/12/22",
+  kisa: true,
+  sunce: false,
+  oblacno: true,
+  temperature: [-3, -4, -6, -7, -6, -4, -10, 0],
+};
+let dan2 = {
+  datum: "2023/12/24",
+  kisa: false,
+  sunce: true,
+  oblacno: false,
+  temperature: [3, 4, 6, 7, 9, 8, 5, 3],
+};
+let dan3 = {
+  datum: "2023/12/25",
+  kisa: false,
+  sunce: true,
+  oblacno: true,
+  temperature: [3, 4, 6, 6, 7, 5, 4, 3],
+};
+let dani = [dan1, dan2, dan3];
+let datum = "";
+let maxMeasure = dani[0].temperature.length;
+console.log(maxMeasure);
+let dateTemp = (niz) => {
+  for (let i = 0; i < niz.length; i++) {
+    if (niz[i].temperature.length >= maxMeasure) {
+      console.log((datum = niz[i].datum));
+    }
+  }
+};
