@@ -25,4 +25,41 @@ let user2 = {
   age: 20,
   blogs: [blog2],
 };
+let user3 = {
+  username: "BakiJ",
+  age: 16,
+  blogs: [blog2],
+};
+let user4 = {
+  username: "JohnDoe",
+  age: undefined,
+  blogs: [blog1, blog3],
+};
 ///
+let blogs = [blog1, blog2, blog3];
+let users = [user1, user2, user3, user4];
+
+users.forEach((u) => {
+  let userBlogs = u.blogs;
+  userBlogs.forEach((b) => {
+    console.log(b.title);
+  });
+});
+users.forEach((u) => {
+  let userBlogs = u.blogs;
+  userBlogs.forEach((b) => {
+    if (b.likes > 50) {
+      console.log(b.title);
+    }
+  });
+});
+users.forEach((u) => {
+  if (u.age < 18) {
+    console.log(u.username);
+  }
+});
+users.forEach((u) => {
+  if (u.username == "JohnDoe") {
+    console.log(u.blogs);
+  }
+});
