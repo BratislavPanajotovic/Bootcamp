@@ -71,12 +71,12 @@ let natpTemp = (niz) => {
 
   let brojNatpros = 0;
   niz.forEach((d) => {
-    let sumaTemp = 0;
+    let sumaDana = 0;
     d.temperature.forEach((temp) => {
-      sumaTemp += temp;
+      sumaDana += temp;
     });
 
-    let prosTempDana = sumaTemp / d.temperature.length;
+    let prosTempDana = sumaDana / d.temperature.length;
 
     if (prosTempDana > prosTemp) {
       brojNatpros++;
