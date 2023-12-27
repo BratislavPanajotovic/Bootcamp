@@ -1,27 +1,27 @@
-let cars =[10,15,20,25,30];
-let distanceWent = (number) => {
-        return number * 60;
-}
-let distance = cars.map(distanceWent);
+let student = {
+  ime: "Milos",
+  prezime: "Milosevic",
+  godinaStudija: 3,
+  ocene: [7, 6, 9, 8, 10, 7, 8, 6, 9, 10, 7],
+  prosecan: () => {
+    let prosecanStudent = true;
+    this.ocene.forEach((ocena) => {
+      if (ocena == 6 || ocena == 10) {
+        prosecanStudent = false;
+      }
+    });
+  },
 
-console.log(distance)
-/////////////////////////////////////////
-let zbir = 0;
-function zbirCifara(broj){
-    while(broj > 0){
-        zbir += broj % 10;
-        broj = Math.floor(broj/10);
-    }
-    return zbir;
-    }
-  console.log(zbirCifara(367));
-  ///////////////////////////////////////
-  let n=10;
-  let m=22;
-  let i=n;
-  let multiply=1;
-  while (i<m) {
-    multiply *= n;
-    i++
-}
-console.log(multiply);
+  ekstra: () => {
+    let broj9 = 0;
+    let broj10 = 0;
+    this.ocene.forEach((e) => {
+      if (e == 9) {
+        broj9++;
+      } else if (e == 10) {
+        broj10++;
+      }
+    });
+    duploVeci = broj10 > broj9 * 2;
+  },
+};
