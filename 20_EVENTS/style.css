@@ -1,0 +1,36 @@
+.btn-cntnr {
+  width: 100px;
+  height: 50px;
+  border-radius: 20%;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+/* .btnPlus {
+  display: flex;
+  justify-content: space-between; } */
+.br {
+  padding: 10px;
+}
+/* .btnMinus {
+  display: flex;
+  justify-content: space-between;
+} */
+.ispisiTekst {
+  width: 25px;
+  height: 25px;
+}
+.input-cntnr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tekst {
+  display: flex;
+  justify-content: space-between;
+}
+.ispisTeksta {
+  display: block;
+}
