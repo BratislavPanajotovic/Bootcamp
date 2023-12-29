@@ -7,16 +7,29 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="ispis"></p>
-    <div class="btn-cntnr">
-      <button class="btnMinus">-</button>
-      <span class="br">0</span>
-      <button class="btnPlus">+</button>
+    <div class="brojevi">
+      <form class="forma">
+        <label class="label">
+          Kvadriraj ovaj br:
+          <input class="input-kvadriraj" type="number" name="pol" value="" />
+          <button class="btn-kvadriraj">Izracunaj</button>
+        </label>
+        <label class="label">
+          Prepolovi ovaj br:
+          <input class="input-prepolovi" type="number" name="pol" value="" />
+          <button class="btn-prepolovi">Izracunaj</button>
+        </label>
+        <label class="label">
+          Izracunati povrsinu kruga za zadati poluprecnik:
+          <input class="input-povrsina" type="number'" name="pol" value="" />
+          <button class="btn-povrsina">Izracunaj</button>
+        </label>
+      </form>
     </div>
-    <div class="input-cntnr">
-      <input type="text" class="tekst" />
-      <button class="ispisiTekst"></button>
-      <p class="ispisTeksta"></p>
+    <div class="ispis-cntnr">
+      <p class="ispisKvadrata"></p>
+      <p class="ispisPrepolovi"></p>
+      <p class="ispisPovrsina"></p>
     </div>
     <script src="script.js"></script>
   </body>
