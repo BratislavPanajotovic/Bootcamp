@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="forma" action="">
+      <div class="div-forma">
+        <input
+          type="number"
+          name=""
+          id="br1"
+          placeholder="Unesite prvi operand"
+        />
+        <input
+          type="number"
+          name=""
+          id="br2"
+          placeholder="Unesite drugi operand"
+        />
+        <div class="operacije">
+          <input type="radio" name="operacija" id="sabiranje" checked /> +
+          <input type="radio" name="operacija" id="oduzimanje" /> -
+          <input type="radio" name="operacija" id="mnozenje" /> *
+          <input type="radio" name="operacija" id="deljenje" /> /
+        </div>
+        <div class="dugmad">
+          <input type="submit" value="racunaj" class="submit" id="racunaj" />
+          <input type="reset" value="Resetuj" class="reset" id="resetuj" />
+        </div>
+      </div>
+    </form>
+    <div class="ispis">
+      <p id="rezultat"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

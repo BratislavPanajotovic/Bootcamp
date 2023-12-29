@@ -1,0 +1,18 @@
+.div-forma {
+  width: 25%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.operacije {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.dugmad {
+  display: flex;
+  justify-content: center;
+}
+.submit {
+w}
