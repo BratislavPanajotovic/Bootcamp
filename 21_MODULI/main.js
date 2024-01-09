@@ -1,0 +1,11 @@
+import { generateImage } from "./modules/general.js";
+import { generateList } from "./modules/list.js";
+import { generateListItem } from "./modules/list.js";
+import { generateTable } from "./modules/table.js";
+import { generateTableItem } from "./modules/table.js";
+import { generateTableRow } from "./modules/table.js";
+let ul = generateList(document.body);
+generateListItem(ul, "images/pexels-eberhard-grossgasteiger-1366913.jpg/");
+let table = generateTable(document.body);
+generateTableRow(table);
+generateTableItem(tr, "images/");
