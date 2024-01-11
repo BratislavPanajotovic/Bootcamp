@@ -152,3 +152,41 @@ let krajNaslova = (niz) => {
 };
 
 krajNaslova(naslovi);
+
+let let1 = {
+  destinacija: "Porto,Portugal",
+  brojPutnika: 32,
+  mesta: 35,
+};
+let let2 = {
+  destinacija: "Amsterdam,Holandija",
+  brojPutnika: 35,
+  mesta: 35,
+};
+let let3 = {
+  destinacija: "Istanbul,Turska",
+  brojPutnika: 35,
+  mesta: 35,
+};
+let let4 = {
+  destinacija: "Nis,Srbija",
+  brojPutnika: 20,
+  mesta: 35,
+};
+let let5 = {
+  destinacija: "Beograd,Srbija",
+  brojPutnika: 29,
+  mesta: 35,
+};
+let letovi = [let1, let2, let3, let4, let5];
+let maxBrojPutnika = (niz) => {
+  let max = "";
+  niz.forEach((e) => {
+    if (e.brojPutnika === e.mesta) {
+      max += ", ";
+      max += e.destinacija;
+    }
+  });
+  return max;
+};
+console.log(maxBrojPutnika(letovi));
