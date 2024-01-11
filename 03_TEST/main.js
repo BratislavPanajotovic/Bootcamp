@@ -103,18 +103,7 @@ let rokfeler = (niz, vlasnik) => {
   }
 };
 console.log(rokfeler(automobili, "Mika"));
-//! Poslednji zadatak : Pretpostavimo da su u niz objekata automobili dodavani po redosledu dolaska na
-// auto plac. Drugim rečima, na početku niza nalaze se automobili koji su ranije
-// došli na plac, dok se na kraju niza nalaze automobili koji su skorije došli na plac.
-// Što je veći indeks automobila u nizu, to je skorije došao na plac.
-// Podelimo niz automobila na dva dela - jednu polovinu čine automobili koji su od
-// ranije na placu, a drugu polovinu čine automobili koji su skorije došli na plac.
-// Ukoliko u nizu ima neparan broj elemenata, tada prvi deo ima jedan više
-// automobil od drugog dela, u suprotnom prva i druga polovina niza imaju jednak
-// broj automobila.
-// Napisati funkciju skorije koja vraća true ukoliko je polovina automobila koja je
-// skorije došla na plac u proseku mlađa (po godini proizvodnje) od polovine
-// automobila koja je ranije došla na plac.
+
 let skorije = (niz) => {
   let srednjiIndex = Math.floor(niz.length / 2);
   let raniji = niz.slice(0, srednjiIndex);
@@ -123,13 +112,17 @@ let skorije = (niz) => {
   for (let i = 0; i < raniji.length; i++) {
     sumaGodina1 += raniji[i].godiste;
   }
+  console.log(sumaGodina1);
   let prosGod1 = sumaGodina1 / raniji.length;
+  console.log(prosGod1);
+
   let sumaGodina2 = 0;
   for (let j = 0; j < kasniji.length; j++) {
     sumaGodina2 += kasniji[j].godiste;
   }
+  console.log(sumaGodina2);
   let prosGod2 = sumaGodina2 / kasniji.length;
-
+  console.log(prosGod2);
   return prosGod2 < prosGod1;
 };
 console.log(skorije(automobili));
