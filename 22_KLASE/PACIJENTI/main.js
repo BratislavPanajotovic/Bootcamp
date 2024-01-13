@@ -40,3 +40,5 @@ let nameContainsA = (niz) => {
 
   ime.forEach();
 };
+const tip = null;
+console.log(tip);

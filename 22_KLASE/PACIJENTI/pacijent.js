@@ -22,7 +22,7 @@ class Pacijent {
     if (0 < v && v < 250) {
       this._visina = v;
     } else {
-      this._visna = 165;
+      this._visina = 165;
     }
   }
   set tezina(t) {
@@ -58,5 +58,11 @@ class Pacijent {
     return false;
   }
 }
+let p1 = new Pacijent("Mirko", 190, 100);
+
+let ispis = () => {
+  console.log(p1.ime);
+};
+ispis();
 
 export default Pacijent;
