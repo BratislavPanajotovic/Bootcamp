@@ -189,4 +189,3 @@ let maxBrojPutnika = (niz) => {
   });
   return max;
 };
-console.log(maxBrojPutnika(letovi));

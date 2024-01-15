@@ -2,21 +2,21 @@ let automobil1 = {
   marka: "Renault",
   km: 184000,
   godiste: 2003,
-  vlasnici: "Bratislav, Dragan, Mika",
+  vlasnici: ["Bratislav", "Dragan", "Mika"],
 };
 
 let automobil2 = {
   marka: "Mercedes",
   km: 200000,
   godiste: 2005,
-  vlasnici: "Mika,Nikola, Nemanja",
+  vlasnici: ["Mika", "Nikola", "Nemanja"],
 };
 
 let automobil3 = {
   marka: "Peugeot",
   km: 284000,
   godiste: 2015,
-  vlasnici: "Zika, Laza, Pera, Mika",
+  vlasnici: ["Zika", "Laza", "Pera", "Mika"],
 };
 let automobili = [automobil1, automobil2, automobil3];
 
