@@ -1,18 +1,36 @@
-let li = document.querySelectorAll("li");
-let btnDodaj = document.querySelector("#submit");
-let inputZadatka = document.querySelector("#task");
 let ul = document.querySelector(".ul");
+
+let li = document.querySelectorAll("li");
+
+let btnDodaj = document.querySelector("#submit");
+
+let btnDodajNaP = document.querySelector("#dodajNaP");
+
+let btnDodajNaK = document.querySelector(".divDodajNaK");
+
+let inputZadatka = document.querySelector("#task");
 
 ul.addEventListener("click", (e) => {
   if (e.target.tagName == "LI") {
-    e.target.classList.toggle("precrtaj");
+    ul.removeChild(e.target);
   }
 });
 
-btnDodaj.addEventListener("click", (e) => {
+inputZadatka.addEventListener("keyup", (e) => {
   e.preventDefault();
-  let tekstZadatka = inputZadatka.value;
-  let newLi = document.createElement("li");
-  newLi.innerHTML = tekstZadatka;
-  ul.appendChild(newLi);
+  if (e.code === "Enter") {
+    let tekstZadatka = inputZadatka.value;
+    if (tekstZadatka.trim() != "") {
+      let newLi = document.createElement("li");
+      newLi.textContent = tekstZadatka;
+      let btnDodajNaP = document.querySelector("#dodajNaP:checked");
+
+      if (btnDodajNaP && btnDodajNaP.value == "dodajNaP") {
+        ul.prepend(newLi);
+      } else {
+        ul.appendChild(newLi);
+      }
+    }
+    inputZadatka.value = "";
+  }
 });
