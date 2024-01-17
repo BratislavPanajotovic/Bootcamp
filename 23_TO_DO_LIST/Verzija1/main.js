@@ -2,11 +2,9 @@ let ul = document.querySelector(".ul");
 
 let li = document.querySelectorAll("li");
 
-let btnDodaj = document.querySelector("#submit");
+let btnRadioDodajNaP = document.querySelector("#dodajNaP");
 
-let btnDodajNaP = document.querySelector("#dodajNaP");
-
-let btnDodajNaK = document.querySelector(".divDodajNaK");
+let btnRadioDodajNaK = document.querySelector(".divDodajNaK");
 
 let inputZadatka = document.querySelector("#task");
 
@@ -23,9 +21,9 @@ inputZadatka.addEventListener("keyup", (e) => {
     if (tekstZadatka.trim() != "") {
       let newLi = document.createElement("li");
       newLi.textContent = tekstZadatka;
-      let btnDodajNaP = document.querySelector("#dodajNaP:checked");
+      let btnRadioDodajNaP = document.querySelector("#dodajNaP:checked");
 
-      if (btnDodajNaP && btnDodajNaP.value == "dodajNaP") {
+      if (btnRadioDodajNaP && btnRadioDodajNaP.value == "dodajNaP") {
         ul.prepend(newLi);
       } else {
         ul.appendChild(newLi);
