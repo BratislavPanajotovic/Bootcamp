@@ -14,11 +14,19 @@ if (localStorage.getItem("zadaci") == null) {
   localStorage.setItem("zadaci", JSON.stringify(nizZadataka));
 } else {
   nizZadataka = JSON.parse(localStorage.getItem("zadaci"));
+  nizZadataka.forEach((zad) => {
+    let liZad = document.createElement("li");
+    liZad.textContent = zad;
+    ul.appendChild(liZad);
+  });
 }
 
 ul.addEventListener("click", (e) => {
   if (e.target.tagName == "LI") {
     ul.removeChild(e.target);
+    let iEl = nizZadataka.indexOf(e.target.textContent);
+    nizZadataka.splice(iEl, 1);
+    localStorage.setItem("zadaci", JSON.stringify(nizZadataka));
   }
 });
 
