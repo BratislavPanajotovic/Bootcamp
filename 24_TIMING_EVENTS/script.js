@@ -4,6 +4,8 @@ window.setTimeout(() => {
 }, 3000);
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
+const btn3 = document.querySelector("#btn3");
+
 const div = document.querySelector("#ispis");
 
 let timer = null;
@@ -27,4 +29,8 @@ btn2.addEventListener("click", function (e) {
   e.preventDefault();
   clearTimeout(timer);
   timer = null;
+});
+
+btn3.addEventListener("click", (e) => {
+  e.preventDefault();
 });
