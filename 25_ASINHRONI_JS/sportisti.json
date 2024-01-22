@@ -1,0 +1,70 @@
+{
+  "sportisti": [
+    {
+      "imePrezime": "Michael Jordan",
+      "visina": 198,
+      "timovi": ["Chicago Bulls", "Washington Wizards"]
+    },
+    {
+      "imePrezime": "LeBron James",
+      "visina": 203,
+      "timovi": [
+        "Cleveland Cavaliers",
+        "Miami Heat",
+        "Cleveland Cavaliers",
+        "Los Angeles Lakers"
+      ]
+    },
+    {
+      "imePrezime": "Kobe Bryant",
+      "visina": 198,
+      "timovi": ["Los Angeles Lakers"]
+    },
+    {
+      "imePrezime": "Magic Johnson",
+      "visina": 206,
+      "timovi": ["Los Angeles Lakers"]
+    },
+    {
+      "imePrezime": "Larry Bird",
+      "visina": 206,
+      "timovi": ["Boston Celtics"]
+    },
+    {
+      "imePrezime": "Shaquille O'Neal",
+      "visina": 216,
+      "timovi": [
+        "Orlando Magic",
+        "Los Angeles Lakers",
+        "Miami Heat",
+        "Phoenix Suns",
+        "Cleveland Cavaliers",
+        "Boston Celtics"
+      ]
+    },
+    {
+      "imePrezime": "Tim Duncan",
+      "visina": 211,
+      "timovi": ["San Antonio Spurs"]
+    },
+    {
+      "imePrezime": "Hakeem Olajuwon",
+      "visina": 213,
+      "timovi": ["Houston Rockets", "Toronto Raptors"]
+    },
+    {
+      "imePrezime": "Kareem Abdul-Jabbar",
+      "visina": 218,
+      "timovi": ["Milwaukee Bucks", "Los Angeles Lakers"]
+    },
+    {
+      "imePrezime": "Wilt Chamberlain",
+      "visina": 216,
+      "timovi": [
+        "Philadelphia/San Francisco Warriors",
+        "Philadelphia 76ers",
+        "Los Angeles Lakers"
+      ]
+    }
+  ]
+}
