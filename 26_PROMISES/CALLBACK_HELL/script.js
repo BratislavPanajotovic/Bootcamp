@@ -47,3 +47,10 @@ getJSON("drugi.json", (data, err) => {
     console.log(err);
   }
 });
+
+getJSON("prvi.json").then(sadrzaj => {
+  console.log(`prvi.json`, sadrzaj);
+  return getJSON("drugi.json");
+}).then(sadrzaj2 => {
+  console.log("drugi.json", sadrzaj3);
+})
