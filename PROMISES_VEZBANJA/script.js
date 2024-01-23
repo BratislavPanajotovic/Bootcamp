@@ -124,6 +124,33 @@ function submitFormVarijanta1(e) {
                 nizArtikala.push(artikal.id)
             }
         });
+
+        getItems("json/weights.json", (data) => {
+            let totalWeight = 0;
+            data.forEach(artikal => {
+                if(nizArtikala.includes(artikal.id)) {
+                    totalWeight+= artikal.weight;
+                }
+            })
+
+            if(totalWeight <= Number(capacity.value)) {
+                getItems("JSON/prices.json",(data)=>{
+                let totalPrice = 0;
+                data.forEach(artikal => {
+                    if(nizArtikala.includes(artikal.id)) {
+                     totalPrice += artikal.price;   
+                    }
+                    
+                }) 
+                div.innerHTML = `Total price of articles: ${totalPrice}`
+                }, (msg)=>{});
+            } else {
+                div.innerHTML = "Not enough capacity in truck!!"
+            }
+
+        }, (msg) => {div.innerHTML = msg})
+
+
         console.log(nizArtikala);
     }, (msg) => {
         div.innerHTML = msg;
