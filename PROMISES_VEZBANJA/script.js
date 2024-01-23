@@ -10,79 +10,81 @@ const div = document.querySelector('#result')
 */ 
 
 
-form.addEventListener("submit", (e)=> {
-
-    e.preventDefault();
-    div.innerHTML = "Submitovana forma"
-
-})
+form.addEventListener("submit", submitFormVarijanta1);
 
 
-function dohvatiZalihe() {
+// function dohvatiZalihe() {
 
-    let request = new XMLHttpRequest();
+//     let request = new XMLHttpRequest();
 
-    request.addEventListener("readystatechange", function() {
+//     request.addEventListener("readystatechange", function() {
         
-        if(request.readyState === 4 && request.status === 200) {
-            // sve ok, obradjujemo zahtev
+//         if(request.readyState === 4 && request.status === 200) {
+//             // sve ok, obradjujemo zahtev
             
-            let data = JSON.parse(request.responseText);
-            resolve(data); // callback funkcija sa kojom radimo nesto
+//             let data = JSON.parse(request.responseText);
+//             resolve(data); // callback funkcija sa kojom radimo nesto
 
-        } else if (request.readyState === 4) {
-        // desila se neka greska
-            reject("Desila se greska")
+//         } else if (request.readyState === 4) {
+//         // desila se neka greska
+//             reject("Desila se greska")
         
-        }
-})
-request.open('GET', "JSON/stock.json");
-request.send();
-}
+//         }
+// })
+// request.open('GET', "JSON/stock.json");
+// request.send();
+// }
 
-function dohvatiTezine() {
+// function dohvatiTezine() {
 
-    let request = new XMLHttpRequest();
+//     let request = new XMLHttpRequest();
 
-    request.addEventListener("readystatechange", function() {
+//     request.addEventListener("readystatechange", function() {
         
-        if(request.readyState === 4 && request.status === 200) {
-            // sve ok, obradjujemo zahtev
+//         if(request.readyState === 4 && request.status === 200) {
+//             // sve ok, obradjujemo zahtev
             
-            let data = JSON.parse(request.responseText);
-            resolve(data); // callback funkcija sa kojom radimo nesto
+//             let data = JSON.parse(request.responseText);
+//             resolve(data); // callback funkcija sa kojom radimo nesto
 
-        } else if (request.readyState === 4) {
-        // desila se neka greska
-            reject("Desila se greska")
+//         } else if (request.readyState === 4) {
+//         // desila se neka greska
+//             reject("Desila se greska")
         
-        }
-})
-request.open('GET', "JSON/weights.json");
-request.send();
-}
+//         }
+// })
+// request.open('GET', "JSON/weights.json");
+// request.send();
+// }
 
-function dohvatiCene() {
+// function dohvatiCene() {
 
-    let request = new XMLHttpRequest();
+//     let request = new XMLHttpRequest();
 
-    request.addEventListener("readystatechange", function() {
+//     request.addEventListener("readystatechange", function() {
         
-        if(request.readyState === 4 && request.status === 200) {
-            // sve ok, obradjujemo zahtev
+//         if(request.readyState === 4 && request.status === 200) {
+//             // sve ok, obradjujemo zahtev
             
-            let data = JSON.parse(request.responseText);
-            resolve(data); // callback funkcija sa kojom radimo nesto
+//             let data = JSON.parse(request.responseText);
+//             resolve(data); // callback funkcija sa kojom radimo nesto
 
-        } else if (request.readyState === 4) {
-        // desila se neka greska
-            reject("Desila se greska")
+//         } else if (request.readyState === 4) {
+//         // desila se neka greska
+//             reject("Desila se greska")
         
-        }
-})
-request.open('GET', "JSON/prices.json");
-request.send();
-}
+//         }
+// })
+// request.open('GET', "JSON/prices.json");
+// request.send();
+// }
+// dohvatiZalihe();
+// // cekaj da se asinhrona f-ja zavrsi
+// dohvatiTezine();
+// // cekaj da se prethodna asinhrona f-ja zavrsi
+// dohvatiCene();
+// // cekaj da se prethodna asinhrona f-ja zavrsi
+// // ispisi ukupnu cenu
 
 
 
@@ -111,7 +113,19 @@ function getItems (resource,resolve,reject) {
     request.send();
 
 }
+function submitFormVarijanta1(e) {
+    e.preventDefault();
 
-dohvatiZalihe();
-dohvatiTezine();
-dohvatiCene();
+    let nizArtikala = [];
+
+    getItems("JSON/stock.json", (data)=>{
+        data.forEach(artikal => {
+            if (artikal.stock == 0) {
+                nizArtikala.push(artikal.id)
+            }
+        });
+        console.log(nizArtikala);
+    }, (msg) => {
+        div.innerHTML = msg;
+    })
+}
