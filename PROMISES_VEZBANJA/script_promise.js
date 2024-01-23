@@ -47,9 +47,23 @@ function submitFormVarijanta2(event) {
         }
     })
     if(totalWeight < Number(capacity.value)) {
-        
+        return getItemsReturnPromise("json/prices.json")
+    } else {
+        div.innerHTML = "Not enough capacity in truck!!"
     }
-}).then()
+}).then(data => {
+    if(data !== undefined) {
+        let totalPrice =0;
+        data.forEach(artikal => {
+            if(nizArtikala.includes(artikal.id) ) {
+                totalPrice += artikal.price;
+            }
+        })
+
+        div.innerHTML = `Total price of articles: ${totalPrice}`
+
+    }
+})
 .catch(msg=> {div.innerHTML = msg});
 }
 
