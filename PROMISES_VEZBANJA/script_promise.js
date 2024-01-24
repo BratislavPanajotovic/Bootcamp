@@ -30,6 +30,17 @@ function getItems(resource) {
     });
 
 }
+function tableMaker(niz, data) {
+    let tr = ``;
+    for (let i = 0; i < niz.length; i++) {
+        const itemId = niz[i];
+        if (data[itemId]) { 
+            tr += `<tr> <td>${data[itemId].item}</td> <td>${data[itemId].price}</td> </tr>`;
+        }
+    }
+    console.log(niz);
+    console.log(tr);
+}
 
 function submitFormVarijanta2(event) {
     event.preventDefault();
@@ -62,15 +73,13 @@ function submitFormVarijanta2(event) {
         data.forEach(artikal => {
             if(nizArtikala.includes(artikal.id) ) {
                 totalPrice += artikal.price;
+                console.log(nizArtikala);
+                
             }
-            function tableMaker (niz) {
-                let tableB = `<ul>`
-                let tableE = `</ul>`
-                for(let i=0 ;i<niz.length;i++) {
-                    let tr = ``
-                }
-            }
+            
         })
+
+        tableMaker(nizArtikala, data);
 
         div.innerHTML = `Total price of articles: ${totalPrice}`
 
