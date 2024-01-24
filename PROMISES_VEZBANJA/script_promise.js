@@ -1,10 +1,12 @@
 const form = document.querySelector('#order');
 const capacity = document.querySelector('#capacity');
 const div = document.querySelector('#result')
+const table = document.querySelector('.tabela');
 
-function getItemsReturnPromise (resource,resolve,reject) {
+function getItems(resource) {
 
     return new Promise((resolve, reject) => {
+
         let request = new XMLHttpRequest();
 
         request.addEventListener("readystatechange", function() {
@@ -31,13 +33,16 @@ function getItemsReturnPromise (resource,resolve,reject) {
 
 function submitFormVarijanta2(event) {
     event.preventDefault();
+
     let nizArtikala = [];
-    getItemsReturnPromise("JSON/stock.json").then(data => {data.forEach(artikal => {
-        if(artikal.stock ==0) {
+
+    getItems("JSON/stock.json")
+    .then(data => {data.forEach(artikal => {
+        if(artikal.stock == 0) {
             nizArtikala.push(artikal.id)
         }
     })
-    return getItemsReturnPromise("JSON/weights.json");
+    return getItems("JSON/weights.json");
 })
 .then(data => {
     let totalWeight =0;
@@ -47,7 +52,7 @@ function submitFormVarijanta2(event) {
         }
     })
     if(totalWeight < Number(capacity.value)) {
-        return getItemsReturnPromise("json/prices.json")
+        return getItems("json/prices.json")
     } else {
         div.innerHTML = "Not enough capacity in truck!!"
     }
@@ -57,6 +62,13 @@ function submitFormVarijanta2(event) {
         data.forEach(artikal => {
             if(nizArtikala.includes(artikal.id) ) {
                 totalPrice += artikal.price;
+            }
+            function tableMaker (niz) {
+                let tableB = `<ul>`
+                let tableE = `</ul>`
+                for(let i=0 ;i<niz.length;i++) {
+                    let tr = ``
+                }
             }
         })
 

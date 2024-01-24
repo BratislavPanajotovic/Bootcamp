@@ -113,6 +113,7 @@ function getItems (resource,resolve,reject) {
     request.send();
 
 }
+
 function submitFormVarijanta1(e) {
     e.preventDefault();
 
@@ -122,6 +123,7 @@ function submitFormVarijanta1(e) {
         data.forEach(artikal => {
             if (artikal.stock == 0) {
                 nizArtikala.push(artikal.id)
+                console.log(nizArtikala);
             }
         });
 
