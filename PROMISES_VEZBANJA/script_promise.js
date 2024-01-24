@@ -31,17 +31,21 @@ function getItems(resource) {
 
 }
 function tableMaker(niz, data) {
-    let tr = ``;
-    for (let i = 0; i < niz.length; i++) {
-        const itemId = niz[i];
-        if (data[itemId]) { 
-            tr += `<tr> <td>${data[itemId].item}</td> <td>${data[itemId].price}</td> </tr>`;
+    
+    let tr = '';
+    niz.forEach((itemId) => {
+        const itemData = data.find(item => item.id === itemId);
+
+        if (itemData) {
+            tr += `<tr> <td>${itemData.item}</td> <td>${itemData.price}</td> </tr>`;
         }
-    }
-    console.log(niz);
+
+    })
+
+    table.innerHTML += tr;
+
     console.log(tr);
 }
-
 function submitFormVarijanta2(event) {
     event.preventDefault();
 
@@ -81,9 +85,9 @@ function submitFormVarijanta2(event) {
 
         tableMaker(nizArtikala, data);
 
-        div.innerHTML = `Total price of articles: ${totalPrice}`
-
+        table.innerHTML += `<tr> <td> UKUPNO: </td> <td> ${totalPrice} </td> </tr> `
     }
+    
 })
 .catch(msg=> {div.innerHTML = msg});
 }
