@@ -2,6 +2,7 @@ const form = document.querySelector('#order');
 const capacity = document.querySelector('#capacity');
 const div = document.querySelector('#result')
 const table = document.querySelector('.tabela');
+const btnSbmt = document.querySelector('.sbmt')
 
 function getItems(resource) {
 
@@ -30,66 +31,74 @@ function getItems(resource) {
     });
 
 }
-function tableMaker(niz, data) {
+
+function tableMaker(niz, data,totalPrice) {
     
     let tr = '';
     niz.forEach((itemId) => {
         const itemData = data.find(item => item.id === itemId);
 
         if (itemData) {
-            tr += `<tr> <td>${itemData.item}</td> <td>${itemData.price}</td> </tr>`;
+            tr += `<tr> <td>${itemData.item}</td> <td>${itemData.price}</td> </tr>
+             `;
         }
-
+        
     })
+    let html = `<tbody>${tr}<tr> <td> UKUPNO: </td> <td> ${totalPrice} </td> </tr> </tbody>`
+    table.innerHTML += html;
 
-    table.innerHTML += tr;
 
-    console.log(tr);
 }
 function submitFormVarijanta2(event) {
     event.preventDefault();
+ 
+    btnSbmt.disabled = true;
+    form.removeEventListener("submit", submitFormVarijanta2);
+   
+        let nizArtikala = [];
 
-    let nizArtikala = [];
-
-    getItems("JSON/stock.json")
-    .then(data => {data.forEach(artikal => {
-        if(artikal.stock == 0) {
-            nizArtikala.push(artikal.id)
-        }
+        getItems("JSON/stock.json")
+        .then(data => {data.forEach(artikal => {
+            if(artikal.stock == 0) {
+                nizArtikala.push(artikal.id)
+            }
+        })
+        return getItems("JSON/weights.json");
     })
-    return getItems("JSON/weights.json");
-})
-.then(data => {
-    let totalWeight =0;
-    data.forEach(artikal => {
-        if(nizArtikala.includes(artikal.id) ) {
-            totalWeight += artikal.weight;
-        }
-    })
-    if(totalWeight < Number(capacity.value)) {
-        return getItems("json/prices.json")
-    } else {
-        div.innerHTML = "Not enough capacity in truck!!"
-    }
-}).then(data => {
-    if(data !== undefined) {
-        let totalPrice =0;
+    .then(data => {
+        let totalWeight =0;
         data.forEach(artikal => {
             if(nizArtikala.includes(artikal.id) ) {
-                totalPrice += artikal.price;
-                console.log(nizArtikala);
-                
+                totalWeight += artikal.weight;
             }
-            
         })
-
-        tableMaker(nizArtikala, data);
-
-        table.innerHTML += `<tr> <td> UKUPNO: </td> <td> ${totalPrice} </td> </tr> `
-    }
+        if(totalWeight < Number(capacity.value)) {
+            return getItems("json/prices.json")
+        } else {
+            div.innerHTML = "Not enough capacity in truck!!"
+        }
+    }).then(data => {
+        if(data !== undefined) {
+            let totalPrice =0;
+            data.forEach(artikal => {
+                if(nizArtikala.includes(artikal.id) ) {
+                    totalPrice += artikal.price;
+                    console.log(nizArtikala);
+                    
+                }
+                
+            })
     
-})
-.catch(msg=> {div.innerHTML = msg});
-}
+            tableMaker(nizArtikala, data,totalPrice);
+    
+        }
+        
+    })
+    .catch(msg=> {
+        div.innerHTML = msg;
+    
+    });
+
+    }
 
 form.addEventListener("submit",submitFormVarijanta2)
