@@ -27,3 +27,18 @@ db.collection(customers).doc().set({
     
 
 })
+console.log(d1);
+let cust2 = {
+    name: "Pera",
+    age: 40,
+    adresses: ["Loznica","Valjevo"],
+    salary: 4000.60
+}
+
+db.collection(customers).doc('cust2').set(cust2).then(
+       () => {
+        document.body.innerHTML += "Korisnik dodat u bazu."
+        
+    }
+    ).catch(e => {
+        document.body.innerHTML += `Greska: ${e}` })
