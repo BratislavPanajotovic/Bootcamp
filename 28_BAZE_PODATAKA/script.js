@@ -2,6 +2,7 @@ console.log(db);
 const customers = 'customers';
 
 let users = db.collection("users");
+
 console.log(users);
 
 let d1 = users.doc("bpan")
@@ -42,3 +43,26 @@ db.collection(customers).doc('cust2').set(cust2).then(
     }
     ).catch(e => {
         document.body.innerHTML += `Greska: ${e}` })
+
+        const myObject1 = {
+            then: function (callback) {
+              const data = "Some important data";
+              return callback(data);
+            }
+          };
+          
+          const myObject2 = {
+            then: function (callback) {
+              const data = "Some text";
+              return callback(data);
+            }
+          };
+          
+          myObject1
+            .then(data => {
+              console.log(data);
+              return myObject2;
+            })
+            .then(data => {
+              console.log(data);
+            });
