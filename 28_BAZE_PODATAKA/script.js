@@ -1,4 +1,8 @@
 console.log(db);
+
+db.doc.collection.set("movies");
+
+
 const customers = 'customers';
 
 let users = db.collection("users");
