@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAgPPblKvYJgYI-6-1SN9LR2pKvS2cAKxs",
+        authDomain: "itbootcamp-75622.firebaseapp.com",
+        projectId: "itbootcamp-75622",
+        storageBucket: "itbootcamp-75622.appspot.com",
+        messagingSenderId: "296025973939",
+        appId: "1:296025973939:web:465b5a34d5b30cedc73cc6",
+        measurementId: "G-QL4Y52YY29",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+
+    <div class="headers">
+      <h1>ITBootcamp Chat</h1>
+      <h3>Choose a chatroom:</h3>
+    </div>
+
+    <div class="buttons">
+      <button>#general</button>
+      <button>#js</button>
+      <button>#homeworks</button>
+      <button>#tests</button>
+    </div>
+
+    <section class="messages">
+      <ul></ul>
+    </section>
+    <div class="inputs">
+      <div class="send">
+        <input type="text" name="messageInput" id="messageInput"/
+        placeholder="Your message...">
+
+        <button>Send</button>
+      </div>
+      <div class="update">
+        <input
+          type="text"
+          name="usernameInput"
+          id="usernameInput"
+          placeholder="Update username"
+        />
+
+        <button>Update</button>
+      </div>
+    </div>
+    <script src="main.js" type="module"></script>
+    <script src="chat.js" type="module"></script>
+  </body>
+</html>
