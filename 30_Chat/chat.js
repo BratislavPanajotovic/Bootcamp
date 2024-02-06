@@ -34,20 +34,14 @@ class Chatroom {
     );
   }
 
-  async addChat(message) {
-    db.collection("chats")
-      .add({
-        message: message,
-        username: this.username,
-        room: this.room,
-        created_at: firebase.firestore.Timestamp.fromDate(datum1),
-      })
-      .then(() => {
-        console.log("Uspesno dodat task");
-      })
-      .catch((e) => {
-        console.log(`Greska: ${e}`);
-      });
+  async addChat(mess) {
+    let docChat = {
+      message: mess,
+      username: this.username,
+      room: this.room,
+      created_at: new Date(),
+    };
+    return await this.chats.add(docChat);
   }
 }
 
@@ -61,3 +55,5 @@ myChatroom1.room = "#js_updated";
 myChatroom2.username = "Bakiii";
 console.log(myChatroom1);
 console.log(myChatroom2);
+
+myChatroom1.addChat("Hello World!").then().catch();
