@@ -17,17 +17,14 @@
 
 .inputs {
   display: flex;
-  justify-content: flex-start;
+  /* flex-direction: column; */
   align-items: center;
+  justify-content: center;
 }
 
-.update {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+.update,
 .send {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  margin-left: 10px;
 }

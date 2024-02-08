@@ -71,6 +71,37 @@ class Chatroom {
         });
       });
   }
+
+  updateUsername(newUsername) {
+    this.chats
+      .where("username", "==", this.username)
+      .where("room", "==", this.room)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          doc.ref.update({ username: newUsername });
+          console.log(newUsername);
+        });
+      })
+      .catch((err) => {
+        console.log(`Error when updating username : ${err}`);
+      });
+  }
+
+  updateRoom(newRoomId) {
+    this.room
+      .where("room", "==", this.room)
+      .get()
+      .then((querySnapShot) => {
+        querySnapShot.forEach((doc) => {
+          doc.ref.update({ room: newRoomId });
+          console.log(newRoomId);
+        });
+      })
+      .catch((error) =>
+        console.log(`Error in getting room id to be updated ${error}`)
+      );
+  }
 }
 
 let myChatroom1 = new Chatroom("#js", "Baki");
@@ -88,3 +119,6 @@ myChatroom1.addChat("Hello World!").then().catch();
 myChatroom1.getChats((data) => {
   console.log(data);
 });
+
+myChatroom1.updateUsername("Baki1");
+myChatroom1.updateRoom("#JS");
