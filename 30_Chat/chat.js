@@ -35,13 +35,19 @@ class Chatroom {
   }
 
   async addChat(mess) {
-    let docChat = {
-      message: mess,
-      username: this.username,
-      room: this.room,
-      created_at: new Date(),
-    };
-    return await this.chats.add(docChat);
+    try {
+      let docChat = {
+        message: mess,
+        username: this.username,
+        room: this.room,
+        created_at: new Date(),
+      };
+      let response = await this.chats.add(docChat);
+      return response;
+    } catch {
+      console.error();
+      "Doslo je do greske!", error;
+    }
   }
   // async getChat() {
   //   const snapshot = await this.chats
@@ -64,10 +70,10 @@ class Chatroom {
       .orderBy("created_at")
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
+          console.log(change.type);
           if (change.type === "added") {
             callback(change.doc.data());
           }
-          console.log(change.type);
         });
       });
   }
@@ -104,21 +110,4 @@ class Chatroom {
   }
 }
 
-let myChatroom1 = new Chatroom("#js", "Baki");
-let myChatroom2 = new Chatroom("#general", "Baki");
-let myChatroom3 = new Chatroom("#random", "Baki");
-
-console.log(myChatroom3.room, myChatroom3.username);
-
-myChatroom1.room = "#js_updated";
-myChatroom2.username = "Bakiii";
-console.log(myChatroom1);
-console.log(myChatroom2);
-
-myChatroom1.addChat("Hello World!").then().catch();
-myChatroom1.getChats((data) => {
-  console.log(data);
-});
-
-myChatroom1.updateUsername("Baki1");
-myChatroom1.updateRoom("#JS");
+export { Chatroom };

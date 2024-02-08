@@ -7,12 +7,24 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 98.7%;
   justify-content: space-around;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 15px;
 }
 .messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50vh;
-  width: 50vw;
+  border: 2px solid purple;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 .inputs {
