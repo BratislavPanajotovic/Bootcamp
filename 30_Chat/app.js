@@ -12,6 +12,7 @@ let btnUpdate = document.querySelector("#update");
 
 let chatui = new ChatUI(ul);
 let chatroom = new Chatroom("js", "Stefan");
+
 let oldUsername = chatroom.takeUsername();
 if (oldUsername) {
   chatroom.updateUsername(oldUsername);

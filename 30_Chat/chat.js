@@ -3,9 +3,14 @@ class Chatroom {
     this.room = r;
     this.username = un;
     this.chats = db.collection("chats");
+    this.currentRoom = this.takeCurrentRoom() || "general";
+    this.unsub = false;
   }
   set room(r) {
     this._room = r;
+    if (this.unsub) {
+      this.unsub();
+    }
   }
   set username(un) {
     if (this.checkUsername(un)) {
@@ -46,23 +51,9 @@ class Chatroom {
       "Doslo je do greske!", error;
     }
   }
-  // async getChat() {
-  //   const snapshot = await this.chats
-  //     .where("room", "==", this.room)
-  //     .orderBy("created_at", "asc")
-  //     .get()
-  //     .then(
-  //       snapshot.forEach((doc) => {
-  //         const data = doc.data();
-  //         console.log(`${data.username}: ${data.message}`);
-  //       })
-  //     )
-  //     .catch((err) => {
-  //       console.log(`There is an error : ${err}`);
-  //     });
-  // }
+
   getChats(callback) {
-    this.chats
+    this.unsub = this.chats
       .where("room", "==", this.room)
       .orderBy("created_at")
       .onSnapshot((snapshot) => {
@@ -83,14 +74,19 @@ class Chatroom {
   }
 
   updateRoom(newRoomId) {
-    this.chats
-      .where("room", "==", this.room)
-      .get()
-      .then((this.room = newRoomId))
-      .then()
-      .catch((error) =>
-        console.log(`Error in getting room id to be updated ${error}`)
-      );
+    if (this.currentRoom !== newRoomId) {
+      this.chats
+        .where("room", "==", this.currentRoom)
+        .get()
+        .then(
+          (this.room = newRoomId),
+          (this.currentRoom = newRoomId),
+          this.saveCurrentRoom()
+        )
+        .catch((error) =>
+          console.log(`Error in getting room id to be updated ${error}`)
+        );
+    }
   }
 
   saveUsername() {
@@ -103,6 +99,14 @@ class Chatroom {
 
   clearChat() {
     list.innerHtml = "";
+  }
+
+  saveCurrentRoom() {
+    localStorage.setItem("currentRoom", this.currentRoom);
+  }
+
+  takeCurrentRoom() {
+    return localStorage.getItem("currentRoom");
   }
 }
 
