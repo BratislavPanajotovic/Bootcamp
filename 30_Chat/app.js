@@ -1,31 +1,43 @@
 import { Chatroom } from "./chat.js";
 import { ChatUI } from "./ui.js";
 
-let myChatroom1 = new Chatroom("#js", "Baki");
-let myChatroom2 = new Chatroom("#general", "Baki");
-let myChatroom3 = new Chatroom("#random", "Baki");
+// DOM
+let ul = document.querySelector("ul");
+let msgInput = document.querySelector("#messageInput");
+let btnSend = document.querySelector("#send");
+let navRooms = document.querySelector("nav");
 
-let sectionMessages = document.querySelector("#messages");
-let showMessage = document.querySelector("#msgList");
+let userInput = document.querySelector("#usernameInput");
+let btnUpdate = document.querySelector("#update");
 
-console.log(myChatroom3.room, myChatroom3.username);
+let chatui = new ChatUI(ul);
+let chatroom = new Chatroom("js", "Stefan");
+let oldUsername = chatroom.takeUsername();
+if (oldUsername) {
+  chatroom.updateUsername(oldUsername);
+} else {
+  chatroom.updateUsername("Anonymous");
+}
 
-myChatroom1.addChat("Hello World!").then().catch();
-myChatroom1.getChats((data) => {
-  console.log(data);
+chatroom.getChats((data) => {
+  chatui.templateLI(data);
 });
 
-myChatroom1
-  .addChat("Zdravo svima!")
-  .then(console.log("Zdravo svima!"))
-  .catch((err) => {
-    console.log(`Error while adding chat: ${err}`);
-  });
+btnSend.addEventListener("click", () => {
+  chatroom.addChat(msgInput.value);
+});
 
-let ChatUI1 = new ChatUI(showMessage);
-console.log(ChatUI1.ulChat);
-console.log(ChatUI1);
+btnUpdate.addEventListener("click", () => {
+  chatroom.updateUsername(userInput.value);
+});
 
-myChatroom1.getChats((data) => {
-  //   ChatUI1.ulChat.
+navRooms.addEventListener("click", (e) => {
+  if (e.target.tagName == "BUTTON") {
+    let newRoom = e.target.textContent;
+    chatroom.updateRoom(newRoom);
+    chatui.clearChat();
+    chatroom.getChats((data) => {
+      chatui.templateLI(data);
+    });
+  }
 });

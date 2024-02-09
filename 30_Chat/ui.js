@@ -21,6 +21,10 @@ class ChatUI {
     )}`;
     this.ulChat.appendChild(li);
   };
+
+  clearChat = () => {
+    this.ulChat.innerHTML = "";
+  };
 }
 
 export { ChatUI };

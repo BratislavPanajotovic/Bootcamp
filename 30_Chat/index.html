@@ -29,12 +29,12 @@
       <h3>Choose a chatroom:</h3>
     </div>
 
-    <div class="buttons">
+    <nav class="buttons">
       <button id="general">#general</button>
       <button id="js">#js</button>
       <button id="homeworks">#homeworks</button>
       <button id="tests">#tests</button>
-    </div>
+    </nav>
 
     <section class="messages">
       <ul id="msgList"></ul>
@@ -44,7 +44,7 @@
         <input type="text" name="messageInput" id="messageInput"/
         placeholder="Your message...">
 
-        <button>Send</button>
+        <button id="send">Send</button>
       </div>
       <div class="update">
         <input
@@ -53,7 +53,7 @@
           id="usernameInput"
           placeholder="Update username"
         />
-        <button>Update</button>
+        <button id="update">Update</button>
       </div>
     </div>
     <script src="app.js" type="module"></script>

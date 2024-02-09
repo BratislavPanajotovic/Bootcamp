@@ -1,6 +1,3 @@
-let data = db.collection("chats");
-let datum1 = new Date("2024-06-02 19:04:00");
-
 class Chatroom {
   constructor(r, un) {
     this.room = r;
@@ -70,8 +67,7 @@ class Chatroom {
       .orderBy("created_at")
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
-          console.log(change.type);
-          if (change.type === "added") {
+          if (change.type == "added") {
             callback(change.doc.data());
           }
         });
@@ -79,34 +75,34 @@ class Chatroom {
   }
 
   updateUsername(newUsername) {
-    this.chats
-      .where("username", "==", this.username)
-      .where("room", "==", this.room)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          doc.ref.update({ username: newUsername });
-          console.log(newUsername);
-        });
-      })
-      .catch((err) => {
-        console.log(`Error when updating username : ${err}`);
-      });
+    if (!newUsername) {
+      newUsername = "Anonymous";
+    }
+    this.username = newUsername;
+    this.saveUsername();
   }
 
   updateRoom(newRoomId) {
-    this.room
+    this.chats
       .where("room", "==", this.room)
       .get()
-      .then((querySnapShot) => {
-        querySnapShot.forEach((doc) => {
-          doc.ref.update({ room: newRoomId });
-          console.log(newRoomId);
-        });
-      })
+      .then((this.room = newRoomId))
+      .then()
       .catch((error) =>
         console.log(`Error in getting room id to be updated ${error}`)
       );
+  }
+
+  saveUsername() {
+    localStorage.setItem("username", this.username);
+  }
+
+  takeUsername() {
+    return localStorage.getItem("username");
+  }
+
+  clearChat() {
+    list.innerHtml = "";
   }
 }
 
