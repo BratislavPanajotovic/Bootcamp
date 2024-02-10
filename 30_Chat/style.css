@@ -1,23 +1,94 @@
+body {
+  display: grid;
+}
+
 .headers {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+#header {
+  font-size: 2em;
+  margin: 0.5em;
+  color: rgb(235, 235, 52);
+}
+#header-chatroom {
+  color: rgb(19, 103, 103);
+}
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 98.7%;
+  width: 75vw;
+  justify-self: center;
   justify-content: space-around;
-  border: 2px solid black;
   padding: 10px;
   border-radius: 15px;
+}
+.rooms {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.rooms:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+.rooms:hover:after {
+  transform: translate(0, 0);
+}
+
+.rooms:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.rooms:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .rooms {
+    padding: 0 40px;
+  }
 }
 .messages {
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   height: 50vh;
+  width: 75vw;
   border: 2px solid purple;
   margin-top: 10px;
   margin-bottom: 10px;
