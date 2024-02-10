@@ -10,7 +10,8 @@ body {
 }
 #header {
   font-size: 2em;
-  margin: 0.5em;
+  margin-top: 2px;
+  margin-bottom: 5px;
   color: rgb(235, 235, 52);
 }
 #header-chatroom {
@@ -19,7 +20,7 @@ body {
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 75vw;
+  width: 55vw;
   justify-self: center;
   justify-content: space-around;
   padding: 10px;
@@ -28,7 +29,7 @@ body {
 .rooms {
   align-items: center;
   background-color: #fee6e3;
-  border: 2px solid #111;
+  border: 2px solid #fee6e3;
   border-radius: 8px;
   box-sizing: border-box;
   color: #111;
@@ -50,7 +51,7 @@ body {
 }
 
 .rooms:after {
-  background-color: #111;
+  background-color: #f9f2f1;
   border-radius: 8px;
   content: "";
   display: block;
@@ -83,13 +84,15 @@ body {
   }
 }
 .messages {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   display: flex;
   justify-content: center;
   justify-self: center;
   align-items: center;
   height: 50vh;
-  width: 75vw;
-  border: 2px solid purple;
+  width: 50vw;
+  border: 3.5px solid #fee6e3;
   margin-top: 10px;
   margin-bottom: 10px;
   border-top-left-radius: 15px;
@@ -100,14 +103,73 @@ body {
 
 .inputs {
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .update,
 .send {
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 1px;
+  margin-bottom: 10px;
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+}
+
+.send input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  border: 2px solid #fee6e3;
+  padding: 1rem 2rem;
+}
+.send input:focus {
+  outline: none;
+  border-color: #fee6e3;
+  box-shadow: 0 0 5px rgba(255, 226, 227, 0.8);
+}
+
+.send button,
+.send button:focus {
+  background-color: white;
+  border-radius: 50%;
+  height: 100%;
+  width: 60px;
+  aspect-ratio: 1;
+  position: absolute;
+  right: 0;
+  outline: none;
+  border-color: #fee6e3;
+  box-shadow: 0 0 5px rgba(255, 226, 227, 0.8);
+}
+
+.update input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  border: 2px solid #fee6e3;
+  padding: 1rem 2rem;
+}
+.update input:focus {
+  outline: none;
+  border-color: #fee6e3;
+  box-shadow: 0 0 5px rgba(255, 226, 227, 0.8);
+}
+
+.update button,
+.update button:focus {
+  background-color: white;
+  border-radius: 50%;
+  height: 100%;
+  width: 60px;
+  aspect-ratio: 1;
+  position: absolute;
+  right: 0;
+  outline: none;
+  border-color: #fee6e3;
+  box-shadow: 0 0 5px rgba(255, 226, 227, 0.8);
 }
