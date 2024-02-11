@@ -10,8 +10,19 @@ class ChatUI {
   }
   formatDate = (timestamp) => {
     const { seconds, nanoseconds } = timestamp;
-    const miliseconds = seconds * 1000 + nanoseconds / 1e6;
-    return new Date(miliseconds).toLocaleString();
+    const messageDate = new Date(seconds * 1000 + nanoseconds / 1e6);
+
+    const today = new Date();
+    const isToday =
+      messageDate.getDate() === today.getDate() &&
+      messageDate.getMonth() === today.getMonth() &&
+      messageDate.getFullYear() === today.getFullYear();
+
+    if (isToday) {
+      return messageDate.toLocaleTimeString();
+    } else {
+      return messageDate.toLocaleString();
+    }
   };
 
   templateLI = (data) => {

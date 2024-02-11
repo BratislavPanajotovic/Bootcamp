@@ -6,7 +6,7 @@ let ul = document.querySelector("ul");
 let msgInput = document.querySelector("#messageInput");
 let btnSend = document.querySelector("#send");
 let navRooms = document.querySelector("nav");
-
+let divAlert = document.querySelector(".alert-success");
 let userInput = document.querySelector("#usernameInput");
 let btnUpdate = document.querySelector("#update");
 
@@ -25,11 +25,26 @@ chatroom.getChats((data) => {
 });
 
 btnSend.addEventListener("click", () => {
-  chatroom.addChat(msgInput.value);
+  if (msgInput.value == "") {
+    alert("Ne mozete poslati praznu poruku!");
+  } else {
+    chatroom.addChat(msgInput.value);
+  }
 });
 
 btnUpdate.addEventListener("click", () => {
-  chatroom.updateUsername(userInput.value);
+  if (userInput.value.length < 4) {
+    alert("Ne mozete da imate username koji ima manje od 4 karaktera.");
+  } else {
+    divAlert.classList.add("show");
+    divAlert.scrollIntoView({ behavior: "smooth" });
+    console.log(`uso`);
+    setTimeout(() => {
+      divAlert.classList.remove("show");
+    }, 3000);
+
+    chatroom.updateUsername(userInput.value);
+  }
 });
 
 navRooms.addEventListener("click", (e) => {

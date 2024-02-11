@@ -173,3 +173,18 @@ body {
   border-color: #fee6e3;
   box-shadow: 0 0 5px rgba(255, 226, 227, 0.8);
 }
+
+#alertDiv {
+  margin-bottom: 0;
+  padding: 5px;
+}
+.alert-success {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.show {
+  margin-bottom: 0;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, margin-bottom 1s ease-in-out;
+}
