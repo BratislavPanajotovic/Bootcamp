@@ -1,6 +1,7 @@
 class ChatUI {
-  constructor(ul) {
+  constructor(ul, chatroom) {
     this.ulChat = ul;
+    this.chatroom = chatroom;
   }
   set ulChat(ul) {
     this._ulChat = ul;
@@ -27,6 +28,14 @@ class ChatUI {
 
   templateLI = (data) => {
     let li = document.createElement("li");
+    const isOwnMessage = data.username === this.chatroom.username;
+
+    if (isOwnMessage) {
+      li.classList.add("own-message");
+    } else {
+      li.classList.add("other-message");
+    }
+
     li.innerHTML = `${data.username}: ${data.message} <br> ${this.formatDate(
       data.created_at
     )}`;

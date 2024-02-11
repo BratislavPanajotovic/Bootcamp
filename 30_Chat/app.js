@@ -1,7 +1,6 @@
 import { Chatroom } from "./chat.js";
 import { ChatUI } from "./ui.js";
 
-// DOM
 let ul = document.querySelector("ul");
 let msgInput = document.querySelector("#messageInput");
 let btnSend = document.querySelector("#send");
@@ -10,8 +9,8 @@ let divAlert = document.querySelector(".alert-success");
 let userInput = document.querySelector("#usernameInput");
 let btnUpdate = document.querySelector("#update");
 
-let chatui = new ChatUI(ul);
 let chatroom = new Chatroom("js", "Stefan");
+let chatui = new ChatUI(ul, chatroom);
 
 let oldUsername = chatroom.takeUsername();
 if (oldUsername) {
