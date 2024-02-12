@@ -39,6 +39,11 @@ class ChatUI {
     li.innerHTML = `${data.username}: ${data.message} <br> ${this.formatDate(
       data.created_at
     )}`;
+
+    if (isOwnMessage) {
+      li.style.textAlign = "right";
+    }
+
     this.ulChat.appendChild(li);
     li.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   };

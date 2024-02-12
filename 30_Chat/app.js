@@ -31,6 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sačuvaj izabranu boju u lokalnom skladištu
     localStorage.setItem("backgroundColor", selectedColor);
   });
+
+  document
+    .getElementById("messageInput")
+    .addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  document.getElementById("js").click();
+
+  document
+    .getElementById("usernameInput")
+    .addEventListener("keyup", function (event) {
+      if (event.key === "Enter") {
+        updateUsername();
+      }
+    });
 });
 
 let oldUsername = chatroom.takeUsername();
@@ -44,15 +61,16 @@ chatroom.getChats((data) => {
   chatui.templateLI(data);
 });
 
-btnSend.addEventListener("click", () => {
+function sendMessage() {
   if (msgInput.value == "") {
     alert("Ne mozete poslati praznu poruku!");
   } else {
     chatroom.addChat(msgInput.value);
+    msgInput.value = "";
   }
-});
+}
 
-btnUpdate.addEventListener("click", () => {
+function updateUsername() {
   if (userInput.value.length < 4) {
     alert("Ne mozete da imate username koji ima manje od 4 karaktera.");
   } else {
@@ -65,8 +83,16 @@ btnUpdate.addEventListener("click", () => {
     }, 3000);
 
     chatroom.updateUsername(userInput.value);
+    chatui.clearChat();
+    chatroom.getChats((data) => {
+      chatui.templateLI(data);
+    });
   }
-});
+}
+
+btnSend.addEventListener("click", sendMessage);
+
+btnUpdate.addEventListener("click", updateUsername);
 
 navRooms.addEventListener("click", (e) => {
   if (e.target.tagName == "BUTTON") {

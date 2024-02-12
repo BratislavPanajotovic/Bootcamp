@@ -64,6 +64,16 @@
       <ul id="msgList" class="message-container"></ul>
     </section>
     <div class="inputs">
+      <div class="color-picker">
+        <label for="backgroundColor">Choose background color:</label>
+        <input
+          type="color"
+          id="backgroundColor"
+          name="backgroundColor"
+          value="#ffffff"
+        />
+        <button id="updateColor">Update Color</button>
+      </div>
       <div class="send">
         <input type="text" name="messageInput" id="messageInput"/
         placeholder="Your message...">
@@ -78,16 +88,6 @@
           placeholder="Update username"
         />
         <button id="update">Update</button>
-      </div>
-      <div class="color-picker">
-        <label for="backgroundColor">Choose background color:</label>
-        <input
-          type="color"
-          id="backgroundColor"
-          name="backgroundColor"
-          value="#ffffff"
-        />
-        <button id="updateColor">Update Color</button>
       </div>
     </div>
     <script src="chat.js" type="module"></script>
