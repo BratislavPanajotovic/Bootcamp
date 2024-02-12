@@ -12,6 +12,27 @@ let btnUpdate = document.querySelector("#update");
 let chatroom = new Chatroom("js", "Stefan");
 let chatui = new ChatUI(ul, chatroom);
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Proveri da li postoji boja u lokalnom skladištu (localStorage)
+  const storedColor = localStorage.getItem("backgroundColor");
+  if (storedColor) {
+    document.body.style.backgroundColor = storedColor;
+    document.getElementById("backgroundColor").value = storedColor;
+  }
+
+  // Dodaj event listener za dugme
+  document.getElementById("updateColor").addEventListener("click", function () {
+    // Dobavi vrednost iz input polja
+    const selectedColor = document.getElementById("backgroundColor").value;
+
+    // Postavi boju pozadine tela
+    document.body.style.backgroundColor = selectedColor;
+
+    // Sačuvaj izabranu boju u lokalnom skladištu
+    localStorage.setItem("backgroundColor", selectedColor);
+  });
+});
+
 let oldUsername = chatroom.takeUsername();
 if (oldUsername) {
   chatroom.updateUsername(oldUsername);

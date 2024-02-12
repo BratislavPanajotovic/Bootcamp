@@ -194,10 +194,62 @@ body {
   transition: opacity 1s ease-in-out, margin-bottom 1s ease-in-out;
 }
 
+.own-message::before {
+  content: "";
+  border-radius: 20px 60px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  background-color: rgb(255, 255, 130);
+  z-index: -1;
+}
+
 .own-message {
   text-align: right;
+  color: #000;
+  /* background-color: rgb(255, 255, 130); ukloni ovu liniju */
+  /* border: 2px solid black; */
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  word-wrap: break-word;
+  z-index: -1;
+}
+
+.other-message::before {
+  border-radius: 20px 60px 40px;
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(209, 114, 51);
+  z-index: -1;
 }
 
 .other-message {
+  color: #000;
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 47%;
+  word-wrap: break-word;
+  z-index: -1;
   text-align: left;
+}
+
+.message-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
 }

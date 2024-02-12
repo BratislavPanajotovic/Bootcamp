@@ -61,7 +61,7 @@
     </nav>
 
     <section class="messages">
-      <ul id="msgList"></ul>
+      <ul id="msgList" class="message-container"></ul>
     </section>
     <div class="inputs">
       <div class="send">
@@ -78,6 +78,16 @@
           placeholder="Update username"
         />
         <button id="update">Update</button>
+      </div>
+      <div class="color-picker">
+        <label for="backgroundColor">Choose background color:</label>
+        <input
+          type="color"
+          id="backgroundColor"
+          name="backgroundColor"
+          value="#ffffff"
+        />
+        <button id="updateColor">Update Color</button>
       </div>
     </div>
     <script src="chat.js" type="module"></script>

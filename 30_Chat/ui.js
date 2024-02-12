@@ -40,6 +40,7 @@ class ChatUI {
       data.created_at
     )}`;
     this.ulChat.appendChild(li);
+    li.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   };
 
   clearChat = () => {
