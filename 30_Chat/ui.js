@@ -9,6 +9,7 @@ class ChatUI {
   get ulChat() {
     return this._ulChat;
   }
+
   formatDate = (timestamp) => {
     const { seconds, nanoseconds } = timestamp;
     const messageDate = new Date(seconds * 1000 + nanoseconds / 1e6);
