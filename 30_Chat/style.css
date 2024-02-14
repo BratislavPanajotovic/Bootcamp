@@ -263,3 +263,11 @@ body {
   height: 7vh;
   width: 26.2vw;
 }
+
+#backgroundColor {
+  margin-left: 10px;
+}
+
+#updateColor {
+  margin-left: 10px;
+}
