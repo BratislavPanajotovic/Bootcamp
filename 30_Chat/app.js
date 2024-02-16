@@ -12,38 +12,37 @@ let btnUpdate = document.querySelector("#update");
 let chatroom = new Chatroom("js", "Stefan");
 let chatui = new ChatUI(ul, chatroom);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const storedColor = localStorage.getItem("backgroundColor");
-  if (storedColor) {
-    document.body.style.backgroundColor = storedColor;
-    document.getElementById("backgroundColor").value = storedColor;
-  }
+// document.addEventListener("DOMContentLoaded", function () {
+//   const storedColor = localStorage.getItem("backgroundColor");
+//   if (storedColor) {
+//     document.body.style.backgroundColor = storedColor;
+//     document.getElementById("backgroundColor").value = storedColor;
+//   }
 
-  document.getElementById("updateColor").addEventListener("click", function () {
-    const selectedColor = document.getElementById("backgroundColor").value;
+// document.getElementById("updateColor").addEventListener("click", function () {
+//   const selectedColor = document.getElementById("backgroundColor").value;
 
-    document.body.style.backgroundColor = selectedColor;
+//   document.body.style.backgroundColor = selectedColor;
 
-    localStorage.setItem("backgroundColor", selectedColor);
+//   localStorage.setItem("backgroundColor", selectedColor);
+// });
+
+document
+  .getElementById("messageInput")
+  .addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
   });
+document.getElementById("js").click();
 
-  document
-    .getElementById("messageInput")
-    .addEventListener("keyup", function (event) {
-      if (event.key === "Enter") {
-        sendMessage();
-      }
-    });
-  document.getElementById("js").click();
-
-  document
-    .getElementById("usernameInput")
-    .addEventListener("keyup", function (event) {
-      if (event.key === "Enter") {
-        updateUsername();
-      }
-    });
-});
+document
+  .getElementById("usernameInput")
+  .addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+      updateUsername();
+    }
+  });
 
 let oldUsername = chatroom.takeUsername();
 if (oldUsername) {

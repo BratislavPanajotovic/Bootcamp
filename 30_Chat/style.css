@@ -60,6 +60,7 @@ body {
   left: 0;
   width: 100%;
   position: absolute;
+
   top: -2px;
   transform: translate(8px, 8px);
   transition: transform 0.2s ease-out;
@@ -79,7 +80,15 @@ body {
   outline: 0;
 }
 
-@media (min-width: 768px) {
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+@media (min-width: 1072px) {
   .rooms {
     padding: 0 40px;
   }
@@ -108,6 +117,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  max-width: 53vw;
+  margin-left: 22.4vw;
 }
 
 .update,
@@ -270,4 +281,22 @@ body {
 
 #updateColor {
   margin-left: 10px;
+}
+@media (max-width: 1072px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 53vw;
+  }
+
+  .rooms {
+    margin-top: 10px;
+  }
+  .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }

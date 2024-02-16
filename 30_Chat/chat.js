@@ -4,12 +4,12 @@ class Chatroom {
     this.username = un;
     this.chats = db.collection("chats");
     this.currentRoom = this.takeCurrentRoom() || "general";
-    this.unsub = false;
+    this.otherRoom = false;
   }
   set room(r) {
     this._room = r;
-    if (this.unsub) {
-      this.unsub();
+    if (this.otherRoom) {
+      this.otherRoom();
     }
   }
   set username(un) {
@@ -53,7 +53,7 @@ class Chatroom {
   }
 
   getChats(callback) {
-    this.unsub = this.chats
+    this.otherRoom = this.chats
       .where("room", "==", this.room)
       .orderBy("created_at")
       .onSnapshot((snapshot) => {
