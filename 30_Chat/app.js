@@ -59,7 +59,7 @@ function sendMessage() {
   if (msgInput.value == "") {
     alert("Ne mozete poslati praznu poruku!");
   } else {
-    chatroom.addChat(msgInput.value);
+    chatroom.addMessage(msgInput.value);
     msgInput.value = "";
   }
 }

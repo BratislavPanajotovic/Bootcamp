@@ -36,7 +36,7 @@ class Chatroom {
     );
   }
 
-  async addChat(mess) {
+  async addMessage(mess) {
     try {
       let docChat = {
         message: mess,
@@ -51,7 +51,7 @@ class Chatroom {
       "Doslo je do greske!", error;
     }
   }
-
+  // Objasniti ovo
   getChats(callback) {
     this.otherRoom = this.chats
       .where("room", "==", this.room)
@@ -64,6 +64,7 @@ class Chatroom {
         });
       });
   }
+  // Iznad
 
   updateUsername(newUsername) {
     if (!newUsername) {
